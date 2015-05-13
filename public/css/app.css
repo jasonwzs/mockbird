@@ -1,0 +1,25 @@
+body {
+  padding-top: 50px;
+}
+
+.top-buffer {
+    margin-top:10px;
+}
+
+.mocktable {
+  table-layout:fixed;
+}
+
+.mocktable td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mocktable tr:nth-child(1) td {
+    border-top: none;
+}
+
+a.nodecoration {
+    text-decoration: none;
+}

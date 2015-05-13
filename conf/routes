@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Import/Export
+POST    /data/upload                controllers.Application.upload()
+GET     /data/download              controllers.Application.download()
+
+# Map mock API call for GET method
+GET     /api/*path                  controllers.Application.callMock(path, method="GET")
+
+# Map mock API call for POST method
+POST    /api/*path                  controllers.Application.callMock(path, method="POST")
+
+# Map internal REST API calls
+GET     /internal/mocks             controllers.Application.getMocks()
+POST    /internal/mocks             controllers.Application.addMock()
+GET     /internal/mocks/:id         controllers.Application.getMock(id)
+PUT     /internal/mocks/:id         controllers.Application.updateMock(id)
+DELETE  /internal/mocks/:id         controllers.Application.deleteMock(id)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /*file                      controllers.Assets.at(path="/public", file)

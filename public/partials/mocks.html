@@ -1,0 +1,26 @@
+<a ui-sref="newMock" class="btn btn-primary">Add New Mock</a>
+<div class="pull-right">
+    <button type="button" ng-file-select ng-file-change="upload($files)" class="btn btn-default">Import</button>
+    <a href="{{downloadUri}}" download="mockbird.json" class="btn btn-success">Export</a>
+</div>
+<table class="table mocktable top-buffer">
+    <thead>
+        <tr>
+            <th class="col-md-1">Method</th>
+            <th class="col-md-3">URI</th>
+            <th class="col-md-2">Request</th>
+            <th class="col-md-4">Response</th>
+            <th class="col-md-1">Action</th>
+        </tr>
+    </thead>
+    <tr ng-repeat="mock in mocks">
+        <td>{{mock.method}}</td>
+        <td>{{mock.uri}}</td>
+        <td>{{mock.requestbody}}</td>
+        <td>{{mock.responsebody}}</td>
+        <td>
+            <a class="btn btn-primary btn-xs" ui-sref="editMock({id:mock.id})">Edit</a>
+            <a class="btn btn-danger btn-xs"  ng-click="deleteMock(mock)">Delete</a>
+        </td>
+    </tr>
+</table>

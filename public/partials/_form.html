@@ -1,0 +1,53 @@
+<div class="form-group">
+    <label for="uri" class="col-sm-2 control-label">URI</label>
+    <div class="col-sm-9">
+        <input type="text" ng-model="mock.uri" class="form-control" id="uri" placeholder="REST API URI (with optional query parameters)"/>
+    </div>
+</div>
+<div class="form-group">
+    <label for="method" class="col-sm-2 control-label">Method</label>
+    <!--<div class="col-sm-9">
+        <input type="text" ng-model="mock.method" class="form-control" id="method" placeholder="GET or POST?"/>
+    </div>-->
+    <div class="col-sm-9" id="method">
+        <label class="radio-inline">
+            <input type="radio" value="GET" ng-model="mock.method" checked> GET
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value="POST" ng-model="mock.method"> POST
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value="PUT" ng-model="mock.method"> PUT
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value="PATCH" ng-model="mock.method"> PATCH
+        </label>
+        <label class="radio-inline">
+            <input type="radio" value="DELETE" ng-model="mock.method"> DELETE
+        </label>
+    </div>
+</div>
+<div class="form-group">
+    <label for="requestbody" class="col-sm-2 control-label">Request Body</label>
+    <div class="col-sm-9">
+        <!--<input type="text" ng-model="mock.requestbody" class="form-control" id="requestbody" placeholder="Request Body"/>-->
+        <textarea rows="7" ng-model="mock.requestbody" class="form-control" id="requestbody" placeholder="Request Body">
+        </textarea>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="responsebody" class="col-sm-2 control-label">Response Body</label>
+    <div class="col-sm-9">
+        <!--<input type="text" ng-model="mock.responsebody" class="form-control" id="responsebody" placeholder="Request Body"/>-->
+        <textarea rows="7" ng-model="mock.responsebody" class="form-control" id="responsebody" placeholder="Response Body">
+        </textarea>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-9">
+        <input type="button" class="btn btn-default" ui-sref="mocks" value="Cancel"/>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </div>
+</div>
