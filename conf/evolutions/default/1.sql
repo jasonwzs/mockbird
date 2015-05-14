@@ -11,16 +11,3 @@ create table mock (
 
 create sequence mock_seq;
 
-
-
-
-# --- !Downs
-
-SET REFERENTIAL_INTEGRITY FALSE;
-
-drop table if exists mock;
-
-SET REFERENTIAL_INTEGRITY TRUE;
-
-drop sequence if exists mock_seq;
-
